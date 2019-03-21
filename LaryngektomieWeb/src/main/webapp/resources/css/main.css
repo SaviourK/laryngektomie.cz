@@ -1,0 +1,48 @@
+@charset "UTF-8";
+*{
+	font-family: 'Source Sans Pro', sans-serif !important; 
+	/* font-family: 'Raleway', sans-serif !important;; */
+}
+
+.bgcolor1 {
+	background-color: #48bdc5;
+}
+
+.bgcolor2 {
+	background-color: #5bc4cb;
+}
+
+.bgcolor3 {
+	background-color: #6fcbd1;
+}
+
+.color1 {
+	color: #48bdc5;
+}
+
+.color2 {
+	color: #5bc4cb;
+}
+
+.color3 {
+	color: #6fcbd1;
+}
+
+body{
+	
+}
+
+
+
+.container-fluid {
+	
+}
+
+.carousel-container {
+	
+}
+
+.navbar{
+	background-color: #48bdc5;
+}
+
