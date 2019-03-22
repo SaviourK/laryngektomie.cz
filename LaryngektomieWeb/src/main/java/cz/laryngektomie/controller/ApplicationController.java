@@ -1,4 +1,4 @@
-package cz.laryngektomie.controler;
+package cz.laryngektomie.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

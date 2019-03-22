@@ -1,4 +1,4 @@
-package cz.laryngektomie.controler;
+package cz.laryngektomie.controller;
 
 import java.util.ArrayList;
 import java.util.List;
