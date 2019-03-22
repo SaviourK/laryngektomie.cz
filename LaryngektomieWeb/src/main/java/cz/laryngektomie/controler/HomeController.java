@@ -8,10 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+
 @Controller
 public class HomeController {
 	
-	
+		
 	@RequestMapping("/")
 	public ModelAndView home() {
 		ModelAndView mv = new ModelAndView("index");
@@ -45,17 +46,13 @@ public class HomeController {
 	}
 	
 	@PostMapping("sendComment")
-	public ModelAndView comments() {
-		ModelAndView mv = new ModelAndView("dotazy");
-		
-		List<String> comments = new ArrayList();
+	public List<String> comments() {
+		List<String> comments = new ArrayList<String>();
 		comments.add("abc");
 		comments.add("bcd");
 		comments.add("xyp");
 		comments.size();
-		mv.addObject("comments", comments);
-		mv.addObject("action", "dotazy");
-		mv.addObject("title", "Dotazy");
-		return mv;
+				
+		return comments;
 	}
 }
