@@ -4,7 +4,7 @@
 	<div class="row justify-content-center align-items-center p-3">
 		<div class="col-lg-2">
 			<a href="/">
-				<img src="/static/images/logomedic.png" alt="logo" width="160">
+				<img src="/static/images/s-let-logo.jpg" alt="logo" width="80">
 			</a>		
 		</div>
 		<div class="col-lg-2"></div>
