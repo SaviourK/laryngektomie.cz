@@ -12,7 +12,7 @@
    <%@include file="/WEB-INF/includes/navbar.jsp"%>
    <div class="container-fluid">
       
-   <form action="/sendComment" method="post" >
+   <form action="/dotazy" method="post" >
    		<input type="text" placeholder="Napište nám...">
    		<input type="submit">
    
@@ -20,10 +20,17 @@
    
    
    
-   <div>
+   
+   <div class="row justify-content-center align-items-center mt-3">
    <c:if test="${comments != null}">
-   	 <c:forEach var = "i" begin = "0" end = "${comments.size() - 1}">
-         <p>Komentář číslo: <c:out value = "${comments[i]}"/><p>
+   
+   	 <c:forEach items="${comments}" var = "comment">
+   	 <div class="col-md-3" style="background-color: #48bdc5;">
+   	
+         <p>Datum: <c:out value="${comment.getDateAsString()}" /><p>
+         <p>Text komentare: <c:out value="${comment.getText()}" /></p>
+         
+     </div>
       </c:forEach>
    </c:if>
    </div>
