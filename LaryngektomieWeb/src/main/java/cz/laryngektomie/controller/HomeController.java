@@ -10,6 +10,8 @@ import java.util.Date;
 import java.util.List;
 
 import javax.print.attribute.standard.DateTimeAtCompleted;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
@@ -58,26 +60,33 @@ public class HomeController {
 		mv.addObject("action", "dotazy");
 		mv.addObject("title", "Dotazy");
 		List<Comment> comments = (List<Comment>)commentRepository.findAll();
-		for(Comment com : comments) {
-			System.out.println(com.getDateAsString());
-		}
-		
+				
 		mv.addObject("comments", comments);
 		return mv;
 	}
 	
 	@PostMapping("dotazy")
-	public ModelAndView comments() {
-		ModelAndView mv = new ModelAndView("dotazy");
-		Comment c = new Comment();
-		c.setText("Koment 8");
+	public ModelAndView comments(HttpServletRequest request) {
 		
-				
-		LocalDateTime nowIdk = LocalDateTime.now();
-		LocalDateTime now = nowIdk.plusHours(nowIdk.getHour()+5);
-		Timestamp sqlNow = Timestamp.valueOf(now);
-		c.setDate(sqlNow);
-		commentRepository.save(c);	
+		ModelAndView mv = new ModelAndView("dotazy");
+		mv.addObject("action", "dotazy");
+		mv.addObject("title", "Dotazy");
+		Comment comment = new Comment();
+		comment.setUsername(request.getParameter("commentName"));
+		comment.setEmail(request.getParameter("commentEmail"));
+		comment.setDate(comment.getCetTime());
+		comment.setText(request.getParameter("commentText"));
+		commentRepository.deleteAll();
+		
+		if(comment.getText() != "" && comment.getEmail() != "" && comment.getText() != "") {
+			commentRepository.save(comment);
+		}
+		
+		
+		List<Comment> comments = (List<Comment>)commentRepository.findAll();
+		
+		mv.addObject("comments", comments);
+		
 		return mv;
 	}
 }
