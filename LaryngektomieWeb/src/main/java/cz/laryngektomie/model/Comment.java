@@ -24,7 +24,7 @@ public class Comment {
 	private String username;
 	private String email;
 	private Date date;
-	private static final DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");  
+	private static final DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");  
 	
 	public int getId() {
 		return id;

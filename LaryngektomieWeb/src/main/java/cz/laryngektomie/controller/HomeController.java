@@ -1,20 +1,12 @@
 package cz.laryngektomie.controller;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
-import javax.print.attribute.standard.DateTimeAtCompleted;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.swing.event.ListSelectionEvent;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -76,15 +68,13 @@ public class HomeController {
 		comment.setEmail(request.getParameter("commentEmail"));
 		comment.setDate(comment.getCetTime());
 		comment.setText(request.getParameter("commentText"));
-		commentRepository.deleteAll();
-		
-		if(comment.getText() != "" && comment.getEmail() != "" && comment.getText() != "") {
+				
+		if(comment.getText() != "" && comment.getEmail() != "" && comment.getText() != "" && comment.getText().length() <= 1500) {
 			commentRepository.save(comment);
 		}
 		
 		
 		List<Comment> comments = (List<Comment>)commentRepository.findAll();
-		
 		mv.addObject("comments", comments);
 		
 		return mv;

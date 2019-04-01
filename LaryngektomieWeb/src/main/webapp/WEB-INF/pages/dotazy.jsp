@@ -14,8 +14,9 @@
    <div class="container-fluid">
     
    
-  
-<form class="text-center border border-light p-5" action="/dotazy" method="post">
+ <div class="row justify-content-center align-items-center mt-3">
+ <div class="col-md-6 rounded mt-3" style="background-color: #48bdc5;">
+	<form class="text-center p-5" action="/dotazy" method="post">
 
     <p class="h4 mb-4">Napište nám svůj názor</p>
 
@@ -30,41 +31,46 @@
     <!-- Message -->
     <div class="form-group">
         <textarea class="form-control rounded-0" name="commentText" rows="3" placeholder="Váš komentář..." ></textarea>
+        
+        <p class="mt-1" style="font-weight: bold;">Zbývá <span class="text-counter">1500</span> znaků</p>
     </div>
-
-
+	
     <!-- Send button -->
     <button class="btn btn-info btn-block" type="submit">Odeslat</button>
 
-</form>
+	</form>
+	</div>
+</div>
 
    
    
    
    
    <div class="row justify-content-center align-items-center mt-3">
-   <div class="col-md-8 rounded mt-3" style="background-color: #48bdc5;">
-   <h2>Vaše komentáře:</h2>
+   <div class="col-md-6 rounded mt-3 text-center"  style="background-color: #48bdc5;">
+   <h2 class="p-4">Vaše komentáře:</h2>
    </div>
    </div>
-    <div class="row justify-content-center align-items-center mt-3">
+    
     
    <c:if test="${comments != null}">
   
   
    	 <c:forEach items="${comments}" var = "comment">
-   	 
-   	 <div class="col-md-8 rounded mt-3" style="background-color: #6fcbd1;">
-   	
-         <p>Datum: <c:out value="${comment.getDateAsString()}" /><p>
-         <p>Jméno: <c:out value="${comment.getUsername()}" /><p>
-         <p>Text komentare: <c:out value="${comment.getText()}" /></p>
+   	 <div class="row justify-content-center align-items-center mt-3" >
+   	 <div class="col-md-6 rounded mt-3 overflow-auto" style="background-color: #48bdc5;">
+   		<div class="bg-info clearfix">
+  			<span class="text-left float-left"><c:out value="${comment.getUsername()}" /> </span>
+  			<span class="text-right float-right"><c:out value="${comment.getDateAsString()}" /></span>
+		</div>
+         
+         <p><c:out value="${comment.getText()}" /></p>
        </div>  
-     
+      </div> 
       </c:forEach>
    </c:if>
    
-   </div>  
+   
 		<div class="row justify-content-center align-items-center mt-3">
 		  <div class="col-md-3" style="background-color: #48bdc5;">
 		    <div class="card">
@@ -96,7 +102,18 @@
 		</div>
 
 
-
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+		  var maxLength = 1500;
+		  $('textarea').keyup(function() {
+		    var textlen = maxLength - $(this).val().length;
+		    $('.text-counter').text(textlen);
+		  });
+		</script>
 
       <%@include file="/WEB-INF/includes/footer.jsp"%>
    </div>
