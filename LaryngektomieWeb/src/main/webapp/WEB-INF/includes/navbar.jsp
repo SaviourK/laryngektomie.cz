@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <nav class="px-5 navbar navbar-expand-md navbar-dark">
 	<div class="container">
 	<div class="mx-auto order-0">
@@ -9,10 +10,10 @@
     <div class="navbar-collapse collapse w-100 order-1 order-md-1 dual-collapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item ${action eq 'index' ? 'active' : ''}">
-                <a class="nav-link " href="/">Úvod</a>
+                <a class="nav-link " href="/">Ãšvod</a>
             </li>
             <li class="nav-item ${action eq 'jicnovy-hlas' ? 'active' : ''}">
-                <a class="nav-link" href="jicnovy-hlas">Jícnový hlas</a>
+                <a class="nav-link" href="jicnovy-hlas">JÃ­cnovÃ½ hlas</a>
             </li>
             <li class="nav-item ${action eq 'layout' ? 'active' : ''}">
                 <a class="nav-link" href="layout">Layout</a>
