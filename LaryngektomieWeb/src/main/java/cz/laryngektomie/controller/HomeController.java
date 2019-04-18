@@ -47,6 +47,14 @@ public class HomeController {
 		return mv;
 	}
 	
+	@RequestMapping("kontakt")
+	public ModelAndView kontakt() {
+		ModelAndView mv = new ModelAndView("kontakt");
+		mv.addObject("action", "kontakt");
+		mv.addObject("title", "Kontakt");
+		return mv;
+	}
+	
 	@RequestMapping("dotazy")
 	public ModelAndView dotazy() {
 		ModelAndView mv = new ModelAndView("dotazy");

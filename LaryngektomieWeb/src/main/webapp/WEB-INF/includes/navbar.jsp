@@ -22,8 +22,8 @@
             <li class="nav-item ${action eq 'dotazy' ? 'active' : ''}">
                 <a class="nav-link" href="/dotazy">Dotazy</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+            <li class="nav-item ${action eq 'kontakt' ? 'active' : ''}">
+                <a class="nav-link" href="/kontakt">Kontakt</a>
             </li>
         </ul>
     </div>

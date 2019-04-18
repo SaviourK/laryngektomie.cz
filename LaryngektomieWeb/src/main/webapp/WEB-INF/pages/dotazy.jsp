@@ -21,7 +21,7 @@
     <p class="h4 mb-4">Napište nám svůj názor</p>
 
     <!-- Name -->
-    <input type="text" name="commentName" class="form-control mb-4" placeholder="Jména" />
+    <input type="text" name="commentName" class="form-control mb-4" placeholder="Jméno" />
 
     <!-- Email -->
     <input type="email" name="commentEmail" class="form-control mb-4" placeholder="E-mail" />
