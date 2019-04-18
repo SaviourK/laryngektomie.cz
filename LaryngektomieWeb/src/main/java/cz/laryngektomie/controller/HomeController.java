@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import cz.laryngektomie.email.EmailServiceImpl;
 import cz.laryngektomie.model.Comment;
 import cz.laryngektomie.repository.CommentRepository;
 
@@ -20,11 +21,13 @@ public class HomeController {
 	@Autowired
 	CommentRepository commentRepository;
 	
+	
 	@RequestMapping("/")
 	public ModelAndView home() {
 		ModelAndView mv = new ModelAndView("index");
 		mv.addObject("action", "index");
 		mv.addObject("title", "Home");
+		
 		return mv;
 	}
 	

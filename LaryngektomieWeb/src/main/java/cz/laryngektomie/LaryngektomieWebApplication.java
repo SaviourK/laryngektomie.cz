@@ -5,7 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
+import it.ozimov.springboot.mail.configuration.EnableEmailTools;
+
 @SpringBootApplication
+@EnableEmailTools
 public class LaryngektomieWebApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {

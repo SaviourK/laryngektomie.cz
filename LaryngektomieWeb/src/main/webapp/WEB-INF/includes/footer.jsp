@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<div class="container-fluid" style="background-color: #fafafa; height: 400px; border: 1px solid black;">
+<div class="container-fluid m-3 mb-1 p-5" style="background-color: #48bdc5;">
 	<div class="footer">
 		&copy; 2019 Mgr. Eva Kocábková, LOGOMEDIC s.r.o. <br>
 		Veverkova 1361/5, 500 02 Hradec Králové 
