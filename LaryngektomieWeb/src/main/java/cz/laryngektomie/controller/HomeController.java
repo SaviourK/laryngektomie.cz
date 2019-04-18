@@ -6,11 +6,13 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import cz.laryngektomie.email.EmailServiceImpl;
+import cz.laryngektomie.email.Feedback;
 import cz.laryngektomie.model.Comment;
 import cz.laryngektomie.repository.CommentRepository;
 
@@ -48,7 +50,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping("kontakt")
-	public ModelAndView kontakt() {
+	public ModelAndView kontakt(@ModelAttribute("feedback")Feedback feedback) {
 		ModelAndView mv = new ModelAndView("kontakt");
 		mv.addObject("action", "kontakt");
 		mv.addObject("title", "Kontakt");
