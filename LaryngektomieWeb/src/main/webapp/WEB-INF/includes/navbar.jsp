@@ -13,10 +13,10 @@
                 <a class="nav-link " href="/">Úvod</a>
             </li>
             <li class="nav-item ${action eq 'jicnovy-hlas' ? 'active' : ''}">
-                <a class="nav-link" href="jicnovy-hlas">Jícnový hlas</a>
+                <a class="nav-link" href="/jicnovy-hlas">Jícnový hlas</a>
             </li>
             <li class="nav-item ${action eq 'layout' ? 'active' : ''}">
-                <a class="nav-link" href="layout">Layout</a>
+                <a class="nav-link" href="/layout">Layout</a>
             </li>
             
             <li class="nav-item ${action eq 'dotazy' ? 'active' : ''}">
