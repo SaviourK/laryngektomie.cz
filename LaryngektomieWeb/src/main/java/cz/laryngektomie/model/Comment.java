@@ -5,7 +5,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -66,6 +68,34 @@ public class Comment {
 		LocalDateTime now = LocalDateTime.now(zone);
 		Timestamp sqlNow = Timestamp.valueOf(now);
 		return sqlNow;
+	}
+	
+	public List<Integer> getPages(int page, double size) {
+		List<Integer> pages = new ArrayList<Integer>();
+		if(page == 1) {
+			for(int i = 1; i <= 5; i++)
+				pages.add(i);
+		}else if(page == 2) {
+			for(int i = 1; i <= 5; i++)
+				pages.add(i);
+		}else if(page == 3) {
+			for(int i = 1; i <= 5; i++)
+				pages.add(i);
+		} else if(page > 3 && page <= size -2 ) {
+			for(int i = page - 1; i <= page+3; i++)
+				pages.add(i);
+		} else if(page == size - 1 ) {
+			for(int i = page - 2; i <= page+2; i++)
+				pages.add(i);
+		} else if(page == size) {
+			for(int i = page - 3; i <= page+1; i++)
+				pages.add(i);
+		} else if(page == size + 1) {
+			for(int i = page - 4; i <= page; i++)
+				pages.add(i);
+			
+		}
+		return pages;
 	}
 	
 	

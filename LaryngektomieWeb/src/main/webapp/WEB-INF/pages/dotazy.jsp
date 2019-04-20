@@ -77,23 +77,24 @@
 <c:if test="${pages != null}">		
 <nav aria-label="Page navigation example mt-5">
  <ul class="pagination justify-content-center">
- 	<li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Previous</a>
+ 	<li class="page-item ${disabledPrev eq 'disabled' ? 'disabled' : ''}">
+      <a class="page-link" href="/dotazy/${pageNum - 1}">Previous</a>
     </li>
  	<c:forEach items="${pages}" var="pageNum">
- 		 <li class="page-item"><a class="page-link" href="/dotazy/${pageNum}">${pageNum}</a></li>
+ 		 <li class="page-item"><a class="page-link"  href="/dotazy/${pageNum}">${pageNum}</a></li>
  	
  	
  	
  	</c:forEach>
  	
- 	<li class="page-item">
-      <a class="page-link" href="#">Next</a>
+ 	<li class="page-item ${disabledNext eq 'disabled' ? 'disabled' : ''}">
+      <a class="page-link" href="/dotazy/${pageNum + 1}">Next</a>
     </li>
         
   </ul>
 </nav>
 </c:if>
+<p>Jste na stránce ${pageNum}</p>
 	
   
   <script type="text/javascript">

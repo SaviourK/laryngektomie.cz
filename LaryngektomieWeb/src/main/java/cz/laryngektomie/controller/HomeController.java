@@ -69,12 +69,14 @@ public class HomeController {
 		ModelAndView mv = new ModelAndView("dotazy");
 		mv.addObject("action", "dotazy");
 		mv.addObject("title", "Dotazy");
+		mv.addObject("pageNum", 1);
+		mv.addObject("disabledPrev", "disabled");
 		List<Integer> pages = new ArrayList<>();
 		for(int i = 1; i <= 5; i++)
 			pages.add(i);
 			
 		
-		Pageable pageable = PageRequest.of(1, 5);
+		Pageable pageable = PageRequest.of(0, 5, Sort.by("Id").descending());
 		Page<Comment> commentsPage = commentRepository.findAll(pageable);
 		List<Comment> comments = commentsPage.getContent();
 		mv.addObject("pages", pages);
@@ -88,21 +90,24 @@ public class HomeController {
 		ModelAndView mv = new ModelAndView("dotazy");
 		mv.addObject("action", "dotazy");
 		mv.addObject("title", "Dotazy");
-		 
 		
-		List<Integer> pages = new ArrayList<>();
-		if(page <= 3) {
-			for(int i = 1; i <= page+3; i++)
-				pages.add(i);
-		} else if(page > 3 && page <= 10) {
-			for(int i = page - 2; i <= page+2; i++)
-				pages.add(i);
-		}
-			
 		
 		Pageable pageable = PageRequest.of(page-1, 5, Sort.by("Id").descending());
 		Page<Comment> commentsPage = commentRepository.findAll(pageable);
+		double size = (commentRepository.findAll().size())/5;
 		List<Comment> comments = commentsPage.getContent();
+		
+		System.out.print(size);
+		
+		List<Integer> pages = comment.getPages(page, size);
+		if(page == 1) {
+			mv.addObject("disabledPrev", "disabled");
+		} else if(page == size + 1) {
+			mv.addObject("disabledNext", "disabled");
+		}
+			
+		
+		mv.addObject("pageNum", page);
 		mv.addObject("pages", pages);
 		mv.addObject("comments", comments);
 		return mv;
