@@ -46,11 +46,11 @@ public class HomeController {
 		return mv;
 	}
 	
-	@RequestMapping("layout")
+	@RequestMapping("ke-stazeni")
 	public ModelAndView layout() {
-		ModelAndView mv = new ModelAndView("layout");
-		mv.addObject("action", "layout");
-		mv.addObject("title", "Layout");
+		ModelAndView mv = new ModelAndView("ke-stazeni");
+		mv.addObject("action", "ke-stazeni");
+		mv.addObject("title", "Ke stažení");
 		return mv;
 	}
 	
@@ -63,12 +63,12 @@ public class HomeController {
 	}
 	
 		
-	@RequestMapping("dotazy")
+	@RequestMapping("poradna")
 	public ModelAndView dotazy(@ModelAttribute("comment")Comment comment, HttpServletRequest request) {
 		
-		ModelAndView mv = new ModelAndView("dotazy");
-		mv.addObject("action", "dotazy");
-		mv.addObject("title", "Dotazy");
+		ModelAndView mv = new ModelAndView("poradna");
+		mv.addObject("action", "poradna");
+		mv.addObject("title", "Poradna");
 		mv.addObject("pageNum", 1);
 		mv.addObject("disabledPrev", "disabled");
 		List<Integer> pages = new ArrayList<>();
@@ -84,12 +84,12 @@ public class HomeController {
 		return mv;
 	}
 	
-	@GetMapping("dotazy/{page}")
+	@GetMapping("poradna/{page}")
 	public ModelAndView page(@ModelAttribute("comment")Comment comment, @PathVariable("page") int page) {
 		
-		ModelAndView mv = new ModelAndView("dotazy");
-		mv.addObject("action", "dotazy");
-		mv.addObject("title", "Dotazy");
+		ModelAndView mv = new ModelAndView("poradna");
+		mv.addObject("action", "poradna");
+		mv.addObject("title", "Poradna");
 		
 		
 		Pageable pageable = PageRequest.of(page-1, 5, Sort.by("Id").descending());
@@ -113,12 +113,12 @@ public class HomeController {
 		return mv;
 	}
 	
-	@PostMapping("dotazy")
+	@PostMapping("poradna")
 	public ModelAndView comments(@ModelAttribute("comment")Comment comment) {
 		
-		ModelAndView mv = new ModelAndView("dotazy");
-		mv.addObject("action", "dotazy");
-		mv.addObject("title", "Dotazy");
+		ModelAndView mv = new ModelAndView("poradna");
+		mv.addObject("action", "poradna");
+		mv.addObject("title", "Poradna");
 		
 				
 		if(comment.getText() != "" && comment.getEmail() != "" && comment.getText() != "" && comment.getText().length() <= 1500) {

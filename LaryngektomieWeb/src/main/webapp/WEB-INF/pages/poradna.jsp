@@ -17,7 +17,7 @@
    
  <div class="row justify-content-center align-items-center mt-3">
  <div class="col-md-6 rounded mt-3" style="background-color: #48bdc5;">
-	<form:form modelAttribute="comment" class="text-center p-5" action="/dotazy" method="POST">
+	<form:form modelAttribute="comment" class="text-center p-5" action="/poradna" method="POST">
 
     <p class="h4 mb-4">Napište nám svůj názor</p>
 
@@ -78,17 +78,17 @@
 <nav aria-label="Page navigation example mt-5">
  <ul class="pagination justify-content-center">
  	<li class="page-item ${disabledPrev eq 'disabled' ? 'disabled' : ''}">
-      <a class="page-link" href="/dotazy/${pageNum - 1}">Previous</a>
+      <a class="page-link" href="/poradna/${pageNum - 1}">Previous</a>
     </li>
  	<c:forEach items="${pages}" var="pageNum">
- 		 <li class="page-item"><a class="page-link"  href="/dotazy/${pageNum}">${pageNum}</a></li>
+ 		 <li class="page-item"><a class="page-link"  href="/poradna/${pageNum}">${pageNum}</a></li>
  	
  	
  	
  	</c:forEach>
  	
  	<li class="page-item ${disabledNext eq 'disabled' ? 'disabled' : ''}">
-      <a class="page-link" href="/dotazy/${pageNum + 1}">Next</a>
+      <a class="page-link" href="/poradna/${pageNum + 1}">Next</a>
     </li>
         
   </ul>

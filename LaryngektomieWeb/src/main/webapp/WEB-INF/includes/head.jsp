@@ -16,28 +16,16 @@
 <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-<script>
-window.addEventListener("load", function(){
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#5bc4cb",
-      "text": "#ffffff"
-    },
-    "button": {
-      "background": "#6fcbd1",
-      "text": "#ffffff"
-    }
-  },
-  "content": {
-    "message": "Tento web používá k poskytování služeb a analýze návštěvnosti soubory cookie. Používáním tohoto webu souhlasíte s podmínkami používání souborů cookie.",
-    "dismiss": "Souhlasím",
-    "link": "Více informací",
-    "href": "https://policies.google.com/technologies/cookies?hl=cs"
-  }
-})});
-</script>
+
+
+<!-- JQuery CDN-->
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous">
+</script>
+
+
+
+
+

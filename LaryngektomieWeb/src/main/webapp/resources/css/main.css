@@ -43,6 +43,12 @@ body{
 }
 
 .navbar{
-	background-color: #48bdc5;
+	transition-duration: 0.6s;
+}
+/* jQuery Styles */
+.navbar-scroll {
+	background: #3C96B4;
+	padding: 0.05rem;
+	transition-duration: 0.6s;
 }
 
