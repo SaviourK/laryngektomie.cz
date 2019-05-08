@@ -20,7 +20,5 @@ public class LaryngektomieWebApplication extends SpringBootServletInitializer {
 		// TODO Auto-generated method stub
 		return builder.sources(LaryngektomieWebApplication.class);
 	}
-	
 
-	
 }

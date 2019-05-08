@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <header class="container">
-	
+		
 	<div class="row justify-content-center align-items-center p-3">
 		<div class="col-lg-2">
 			<a href="/">

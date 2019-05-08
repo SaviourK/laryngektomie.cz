@@ -1,4 +1,4 @@
-<title>Laryngektomie - ${title}</title>
+<title>S-LET - ${title}</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
@@ -26,6 +26,8 @@
 </script>
 
 
-
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
 

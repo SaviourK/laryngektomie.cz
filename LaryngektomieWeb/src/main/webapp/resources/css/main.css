@@ -1,7 +1,11 @@
 @charset "UTF-8";
 *{
-	font-family: 'Source Sans Pro', sans-serif !important; 
+	/* font-family: 'Source Sans Pro', sans-serif !important;  */
 	/* font-family: 'Raleway', sans-serif !important;; */
+	/* 1 font-family: 'Montserrat', sans-serif !important; ; */
+	font-family: 'Crimson Text', serif;
+	/* font-family: 'Quicksand', sans-serif; */
+	font-size: 1.05rem;
 }
 
 .bgcolor1 {
@@ -42,13 +46,40 @@ body{
 	
 }
 
+.carousel-inner{
+	margin: 0 auto;
+	max-height: 65vh;
+}
+
+@media only screen and (max-width: 1050px) {
+	.carousel-inner{
+	
+	max-height: 45vh;
+}
+	
+}
+
 .navbar{
 	transition-duration: 0.6s;
 }
+
 /* jQuery Styles */
 .navbar-scroll {
 	background: #3C96B4;
 	padding: 0.05rem;
 	transition-duration: 0.6s;
+}
+
+
+.btn-primary{
+	background-color: #48bdc5;
+	border: 1px solid white;
+}
+
+
+a.btn.btn-primary.btn-lg.text-center:hover{
+	background: #3C96B4;
+	border: 1px solid black;
+	
 }
 

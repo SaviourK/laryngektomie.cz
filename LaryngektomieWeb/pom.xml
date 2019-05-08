@@ -87,7 +87,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>booking-app</finalName>
+		<finalName>stest</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

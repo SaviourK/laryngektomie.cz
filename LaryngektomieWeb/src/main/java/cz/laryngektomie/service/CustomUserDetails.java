@@ -16,11 +16,11 @@ public class CustomUserDetails implements UserDetails {
 	 */
 	private static final long serialVersionUID = -5929159187297236167L;
 	private User user;
-	
-	
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return user.getRoles().stream().map(role->new SimpleGrantedAuthority("ROLE_"+role)).collect(Collectors.toList());
+		return user.getRoles().stream().map(role -> new SimpleGrantedAuthority("ROLE_" + role))
+				.collect(Collectors.toList());
 	}
 
 	@Override
@@ -64,5 +64,4 @@ public class CustomUserDetails implements UserDetails {
 		this.user = user;
 	}
 
-	
 }

@@ -1,6 +1,4 @@
 
-
-
 package cz.laryngektomie.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,23 +19,26 @@ public class SecureConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private UserDetailsService userDetailsService;
-	
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(encodePWD());
 	}
-	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
 		http.authorizeRequests().antMatchers("/").permitAll();
-		/*.authorizeRequests().antMatchers("/", "layout").permitAll().and()
-		.authorizeRequests().antMatchers("/rest/**").authenticated().anyRequest(). permitAll().and()
-		.authorizeRequests().antMatchers("/secure**").authenticated().anyRequest().hasAnyRole("ADMIN").and()
-		.formLogin().permitAll().and()
-		.logout().permitAll();*/
+		/*
+		 * .authorizeRequests().antMatchers("/", "layout").permitAll().and()
+		 * .authorizeRequests().antMatchers("/rest/**").authenticated().anyRequest().
+		 * permitAll().and()
+		 * .authorizeRequests().antMatchers("/secure**").authenticated().anyRequest().
+		 * hasAnyRole("ADMIN").and() .formLogin().permitAll().and()
+		 * .logout().permitAll();
+		 */
 	}
-	
+
 	@Bean
 	public BCryptPasswordEncoder encodePWD() {
 		return new BCryptPasswordEncoder();

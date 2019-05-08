@@ -28,8 +28,7 @@ public class AdminController {
 		String encryptPwd = passwordEncoder.encode(pwd);
 		user.setPassword(encryptPwd);
 		userRepository.save(user);
-		return "user"+ user.getUsername() +" added successfully...";
+		return "user" + user.getUsername() + " added successfully...";
 	}
 
-	
 }
