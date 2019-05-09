@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
+<meta name="description" content="Spolek S-LET vznikl 10. 8. 2018 s cílem podporovat osoby po laryngektomii. Členy spolku jsou lidé po operacích hrtanu - po laryngektomii, jejich rodinní příslušníci, lékaři, logopedi a ostatní příznivci.">
 <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Jekyll v3.8.5">
 <!-- font -->
